@@ -8,6 +8,8 @@ import hello.servlet.web.frontcontroller.v4.controller.MemberFormControllerV4;
 import hello.servlet.web.frontcontroller.v4.controller.MemberListControllerV4;
 import hello.servlet.web.frontcontroller.v4.controller.MemberSaveControllerV4;
 import hello.servlet.web.frontcontroller.v5.adapter.ControllerV3HandlerAdapter;
+import hello.servlet.web.frontcontroller.v5.adapter.ControllerV4HandlerAdapter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,6 +25,7 @@ import java.util.Map;
     public class FrontControllerServletV5 extends HttpServlet {
         private final Map<String, Object> handlerMappingMap = new HashMap<>();
         private final List<MyHandlerAdapter> handlerAdapters = new ArrayList<>();
+
         public FrontControllerServletV5() {
             initHandlerMappingMap();
             initHandlerAdapters();
@@ -41,6 +44,7 @@ import java.util.Map;
 
     private void initHandlerAdapters() {
         handlerAdapters.add(new ControllerV3HandlerAdapter());
+        handlerAdapters.add(new ControllerV4HandlerAdapter()); //V4 추가
     }
 
     @Override
