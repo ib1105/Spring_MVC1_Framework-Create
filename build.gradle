@@ -7,7 +7,7 @@ plugins {
 
 group = 'hello'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '8' //자바버전 11로 바꿔줘야함
+sourceCompatibility = '11' //자바버전 11로 바꿔줘야함
 
 configurations {
 	compileOnly {

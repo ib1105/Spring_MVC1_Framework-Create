@@ -46,8 +46,8 @@ public class RequestHeaderServlet extends HttpServlet {
         }
 
 
-        /*request.getHeaderNames().asIterator().forEachRemaining(headerName -> System.out.println(headerName + ":" + request.getHeader(headerName)));
-        System.out.println("--- Headers - end ---");*/
+        request.getHeaderNames().asIterator().forEachRemaining(headerName -> System.out.println(headerName + ":" + request.getHeader(headerName)));
+        System.out.println("--- Headers - end ---");
     }
 
     //Header 편리한 조회
@@ -58,9 +58,9 @@ public class RequestHeaderServlet extends HttpServlet {
         System.out.println("request.getServerPort() = " + request.getServerPort()); //Host 헤더
         System.out.println();
         System.out.println("[Accept-Language 편의 조회]");
-        /*request.getLocales().asIterator() //자바11로 바꿔서 조회
+        request.getLocales().asIterator() //자바11로 바꿔서 조회
                 .forEachRemaining(locale -> System.out.println("locale = " +
-                        locale));*/
+                        locale));
         System.out.println("request.getLocale() = " + request.getLocale());
         System.out.println();
         System.out.println("[cookie 편의 조회]");
